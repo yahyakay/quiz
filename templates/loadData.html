@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='todos.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+
+
+</head>
+<body>
+<h1>Student list</h1>
+<table id="myTable" class="display" >
+    <thead>
+    <tr>
+        <th>StudentID</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Ethnicity</th>
+        <th>ParentalEducation</th>
+        <th>StudyTimeWeekly</th>
+        <th>Absences</th>
+        <th>Tutoring</th>
+        <th>ParentalSupport</th>
+        <th>Extracurricular</th>
+        <th>Sports</th>
+        <th>Music</th>
+        <th>Volunteering</th>
+        <th>GPA</th>
+        <th>GradeClass</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%for i in range(0, len)%}
+    <tr>
+        <td>{{students[i].StudentID }}</td>
+        <td>{{students[i].Age }}</td>
+        <td>{{students[i].name }}</td>
+        <td>{{students[i].ethno }}</td>
+        <td>{{students[i].ParentalEducation }}</td>
+        <td>{{students[i].StudyTimeWeekly }}</td>
+        <td>{{students[i].Absences }}</td>
+        <td>{{students[i].Tutoring }}</td>
+        <td>{{students[i].ParentalSupport }}</td>
+        <td>{{students[i].Extracurricular }}</td>
+        <td>{{students[i].Sports }}</td>
+        <td>{{students[i].Music }}</td>
+        <td>{{students[i].Volunteering }}</td>
+        <td>{{students[i].GPA }}</td>
+        <td>{{students[i].GradeClass }}</td>
+    </tr>
+    {%endfor%}
+
+    </tbody>
+</table>
+<script type="text/javascript">
+         $(document).ready(function() {
+         console.log("Executed");
+         new DataTable('#myTable')
+         });
+        </script>
+</body>
+</html>

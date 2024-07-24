@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='quiz.css') }}">
+
+</head>
+<body>
+    <div class="text-Black text-center">
+        <h1 >quiz </h1>
+        <h2>Quiz categories</h2>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-light justify-content-center   margin-left:30px margin-right:30px">
+        <ol class="navbar-nav">
+            {%for i in range(0, categoriesLen)%}
+            <li><a href="/categories/{{categories[i].id }}">{{categories[i].name }}</a></li>
+
+            {%endfor%}
+        </ol>
+    </nav>
+    <div class="text-Black text-center">
+        <h1 >Questions</h1>
+        <h2>username:{{session['playerName']}}</h2>
+        <h2>{{session['categoryName']}}</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6"><form action="{{ url_for('submit') }}" method="post">
+        {%for i in range(0, quizLen)%}
+            <fieldset id="question_{{ quiz[i].id }}">
+                <p>{{i+1}}){{quiz[i].question}}</p>
+
+                <input type="radio" id="choice1" name="question_{{ quiz[i].id }}" value="{{ quiz[i].choice1 }}">
+                <label for="choice1">{{ quiz[i].choice1 }}</label><br>
+
+                <input type="radio" id="choice2" name="question_{{ quiz[i].id }}" value="{{ quiz[i].choice2 }}">
+                <label for="choice2">{{ quiz[i].choice2 }}</label><br>
+
+                <input type="radio" id="choice3" name="question_{{ quiz[i].id }}" value="{{ quiz[i].choice3 }}">
+                <label for="choice3">{{ quiz[i].choice3 }}</label><br>
+
+                <input type="radio" id="choice4" name="question_{{ quiz[i].id }}" value="{{ quiz[i].choice4 }}">
+                <label for="choice4">{{ quiz[i].choice4 }}</label><br>
+
+                <input type="hidden" name="category" value="{{ quiz[i].category_id }}">
+            </fieldset>
+        {%endfor%}
+
+        <button  type="submit" value="Submit" class="btn btn-primary">next</button>
+    </form></div>
+        <div class="col-md-3" ></div>
+    </div>
+
+
+
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

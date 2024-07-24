@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='todos.css') }}">
+
+</head>
+<body>
+    <h1 >Todos list</h1>
+    <form action="{{ url_for('submit') }}" method="post">
+        <!-- Text Input for Name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <!-- Submit Button -->
+        <button  type="submit" value="Submit">Save</button>
+    </form>
+    <ol>
+        {%for i in range(0, len)%}
+        <li>{{todos[i].id }} - {{todos[i].name }}
+            <a href="/change/{{todos[i].id }}/{{todos[i].name }}" class="btn-update">Update</a>
+            <a href="/delete/{{todos[i].name }}" style="background-color: red; color: black">Delete</a> </li>
+        {%endfor%}
+    </ol>
+
+</body>
+</html>

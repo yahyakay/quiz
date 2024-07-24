@@ -1,2 +1,1 @@
-# quiz
-A trivia game
+web apps

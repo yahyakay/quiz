@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='todos.css') }}">
+</head>
+<body>
+<p>You are changing this {{name}}</p>
+<form action="{{ url_for('update') }}"  method="post">
+    <input type="hidden" name="oldname" value="{{name}}">
+    <label for="newname">New Task Name:</label><br>
+  <input type="text" id="newname" name="newname" ><br>
+    <input type="hidden" name="id" value="{{id}}">
+    <button type="submit" value="Submit">Update</button>
+</form>
+
+
+</body>
+</html>

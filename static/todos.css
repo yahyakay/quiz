@@ -1,0 +1,45 @@
+body {
+    background-color: lightblue
+}
+button {
+padding: 10px 20px;
+color: black;
+text-align: center;
+font-size: 20px;
+background-color: green;
+}
+
+h1 {
+text-align: center;
+}
+
+form {
+text-align: center
+}
+
+p {
+font-family: "Times New Roman", Times, serif;
+}
+
+a:link, a:visited {
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+li {
+ list-style-type: none;
+ }
+ .btn-update {
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    background-color: lightblue;
+ }

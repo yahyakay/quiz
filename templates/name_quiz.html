@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+</head>
+<body>
+    <div class="text-Black text-center">
+        <h1 >Username</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+    <form action="{{ url_for('username') }}" method="post">
+        <!-- Text Input for Name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <!-- Submit Button -->
+        <button  type="submit" value="Submit">Save</button>
+    </form>
+        </div>
+        <div class="col-md-3" ></div>
+    </div>
+
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
